@@ -1,43 +1,38 @@
 package com.dbmi.demos.quiz;
 
 import org.xml.sax.*;
+import org.xml.sax.helpers.XMLFilterImpl;
 
 /**
  * @author Daniel B. Moore
- * <p>MCQuiz (Multiple Choice Quiz Servlet)
+ * <p>QuizManagerServlet (Multiple Choice Quiz Servlet)
  * <p>Public Licence
  * <p>Copyright (c) 1999-2000 Daniel B. Moore.  All rights reserved.
  *
  * <p>This program is free software; you can redistribute it and/or
  * modify it under the current terms of the GNU General Public License
  * as published by the Free Software Foundation (ref http://www.gnu.org).
- * <p>The QuizBase class extends the event based XML parsing class from
+ * <p>The QuizParser class extends the event based XML parsing class from
  * IBM to handle parsing chores. 
  */
 
 
-public class QuizBase extends org.xml.sax.HandlerBase
+public class QuizParser extends XMLFilterImpl
 {
    private Quiz thisQuiz = null;
    private Question thisQ = null;
    private QuestionList qList = null;
-   private java.util.Stack myStack = new java.util.Stack();
    private String charactersTempString = new String("");
    private int i = 0;
 
-   /** null constructor constructs a quizbase to handle SAX events. */
-   QuizBase(){
-      super();
-   } // NULL CONSTRUCTOR
-
-   /** constructs a quizbase with a predefined QuestionList */
-   QuizBase(QuestionList qList){
+   /** constructs a QuizParser with a predefined QuestionList */
+   QuizParser(QuestionList qList){
       super();
       this.qList = qList;
    } // CONSTRUCTOR
 
-   /** constructs a quizbase, passing the Quiz and QuestionList handles.*/
-   QuizBase(Quiz aQuiz,QuestionList qList){
+   /** constructs a QuizParser, passing the Quiz and QuestionList handles.*/
+   QuizParser(Quiz aQuiz,QuestionList qList){
       super();
       this.thisQuiz = aQuiz;
       this.qList = qList;

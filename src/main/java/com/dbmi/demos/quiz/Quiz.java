@@ -4,11 +4,9 @@
  * License. Terms and conditions available from http://www.gnu.org. 
  */
 
-package com.dbmi.;
+package com.dbmi.demos.quiz;
 
-import java.io.*;
-import org.xml.sax.*;
-import com.ibm.xml.parsers.SAXParser;
+import org.xml.sax.SAXException;
 
 /**
  * @author Daniel B. Moore <p>
@@ -36,11 +34,15 @@ public class Quiz{
    /** This method calls the XML parser and builds Question
     *  elements to place into the QuestionList.
     */
-   public void fillQuestionList(QuestionList qList) throws IOException, SAXException{
-      SAXParser myParser = new SAXParser();
-      myParser.setDocumentHandler(new QuizBase(qList));
-      // old version myParser.parse(quizPath + "\\" + theDocument);
-      myParser.parse(quizPath + theDocument);
+   public void fillQuestionList(QuestionList qList) throws QuizException{
+      QuizParser myParser = new QuizParser(this, qList);
+      try {
+         myParser.parse(quizPath + theDocument);
+      }catch(SAXException se) {
+         throw new QuizException("Caught parsing error: " + se);
+      }catch(java.io.IOException ioe) {
+         throw new QuizException("Caught IO error in parser: " + ioe);
+      } // TRY-CATCH
    } // CREATEQUESTIONLIST
 
    public String getDocName(){

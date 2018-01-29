@@ -2,7 +2,7 @@ package com.dbmi.demos.quiz;
 
 /**
  * @author Daniel B. Moore <p>
- * <p>MCQuiz (Multiple Choice Quiz Servlet)
+ * <p>QuizManagerServlet (Multiple Choice Quiz Servlet)
  * <p>Public Licence
  * <p>Copyright (c) 1999-2000 Daniel B. Moore.  All rights reserved.
  *
@@ -61,7 +61,7 @@ public class QuizLayout
 		pw.println("</HTML>");
 	}
 
-	/** Lay out the first page of output for the MCQuiz servlet
+	/** Lay out the first page of output for the QuizManagerServlet servlet
 	 */
 	public void layoutFirstPage(int numQs,String quizName,String url){
 	   	String pageText = new String("");
@@ -80,13 +80,13 @@ public class QuizLayout
 	      pageText += "<INPUT" + attrib("type","submit") + attrib("name","next");
 	      pageText += attrib("value","Continue") + ">";
 	      pageText += "<INPUT" + attrib("type","hidden") + attrib("name","goto");
-	      pageText += attrib("value","/servlet/MCQuiz") + ">";
+	      pageText += attrib("value","/servlet/QuizManagerServlet") + ">";
 	      pageText += "</tr></td>";
 	      pageText += "</table>";
 	      layoutPage(pageText);
 	}
 
-	/** Lay out the last page of the MCQuiz output. This page adds a restart button
+	/** Lay out the last page of the QuizManagerServlet output. This page adds a restart button
 	 *  to allow reinitialization of a new quiz session.
 	 */
 	public void layoutLastPage(Quiz aQuiz){
@@ -96,7 +96,7 @@ public class QuizLayout
    	pageText += "<h1" + attrib("align","center");
    	pageText += ">Thank you for playing the " + aQuiz.getQuizName() + " Quiz";
    	pageText += "</h1>\n";
-	   pageText += "<FORM" + attrib("action","/servlet/MCQuiz");
+	   pageText += "<FORM" + attrib("action","/servlet/QuizManagerServlet");
 	   pageText += attrib("METHOD","GET");
 	   pageText += ">\n";
 	   pageText += "<INPUT" + attrib("type","submit") + attrib("name","next");
@@ -114,7 +114,7 @@ public class QuizLayout
 	   pw.println("</td></tr>");
 	   pw.println("<tr valign=\"middle\"><td>");
 	   pw.println("<table" + attrib("width","70%") + attrib("border","1") + attrib("bgcolor","#AAEEFF") + attrib("align","center") + ">");
-	   pw.println("<FORM" + attrib("action","/servlet/MCQuiz/") + attrib("METHOD","POST") + ">");
+	   pw.println("<FORM" + attrib("action","/servlet/QuizManagerServlet/") + attrib("METHOD","POST") + ">");
 	   java.util.Enumeration choiceEnum = myQ.choiceElements();
 	   while(choiceEnum.hasMoreElements()){
 	      String myElement = new String(choiceEnum.nextElement().toString());
@@ -165,7 +165,7 @@ public class QuizLayout
 	   skipline();
 	   pw.println("<table" + attrib("width","70%") + attrib("border","0") + attrib("bgcolor","#FFFFFF") + attrib("align","center") + ">");
 	   pw.println("<tr><td" + attrib("align","center")+ ">");
-	   pw.println("<FORM" + attrib("action","/servlet/MCQuiz/") + attrib("METHOD","POST") + ">");
+	   pw.println("<FORM" + attrib("action","/servlet/QuizManagerServlet/") + attrib("METHOD","POST") + ">");
 	   pw.println("<INPUT" + attrib("type","submit") + attrib("name","next") + attrib("value","Continue"));
 	   pw.println("<INPUT" + attrib("type","submit") + attrib("name","next") + attrib("value","Restart"));
 	   pw.println("</FORM>");

@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!-- A test comment is entered -->
+<!DOCTYPE quiz SYSTEM "NewMCQuiz.dtd">
+<quiz name="World Geography Test">
+   <question number="5">
+      <questionText>
+      What is the highest mountain in the world?
+      </questionText>
+      <choiceList type=single>
+         <choice>
+            Mt Rushmore
+         </choice>
+         <choice>
+            Mt. McKinley
+         </choice>
+         <choice correctAnswer=true>
+            Mt. Everest
+         </choice>
+         <choice>
+            Mt. Ranier
+         </choice>
+         <choice>
+            The Matterhorn
+         </choice>
+      </choiceList>
+      <explanation>
+         Mt. Everest is the world's highest mountain,
+         towering over 29,000 ft. above sea level.
+      </explanation>
+   </question>
+   <question number="7">
+      <questionText>
+      What is the longest river in the world?
+      </questionText>
+      <choiceList type=single>
+         <choice>
+            The Amazon
+         </choice>
+         <choice correctAnswer=true>
+            The Nile
+         </choice>
+         <choice>
+            The Rhine
+         </choice>
+         <choice>
+            The Mississippi
+         </choice>
+      </choiceList>
+         <explanation>
+            The Nile is the world's longest river, stretching over 4,100
+            miles from its source to its end in the Mediterranean Sea.
+         </explanation>
+   </question>
+   <question number="1">
+      <questionText>
+      Which of the following countries does not border on India?
+      </questionText>
+      <choiceList type=multiple>
+         <choice>
+            Pakistan
+         </choice>
+         <choice>
+            Burma
+         </choice>
+         <choice>
+            Nepal 
+         </choice>
+         <choice>
+            China
+         </choice>
+         <choice correctAnswer=true>
+            Afghanistan
+         </choice>
+         <choice correctAnswer=true>
+            Canada
+         </choice>
+      </choiceList>
+      <explanation>
+         Afghanistan is the only country of the five which
+         does not touch the borders of India, buffered by Pakistan on
+         the southeast.
+      </explanation>
+   </question>
+   <question number="3">
+      <questionText>
+      What is the highest temperature (Farenheit) ever recorded on earth?
+      </questionText>
+      <choiceList type=single>
+         <choice>
+            121 degrees
+         </choice>
+         <choice>
+            128 degrees
+         </choice>
+         <choice>
+            133 degrees 
+         </choice>
+         <choice correctAnswer=true>
+            136 degrees
+         </choice>
+      </choiceList>
+      <explanation>
+         The temperature reached a scorching 136 degrees Farenheit
+         at Al-Aziziyah, Libya in Northern Africa on September 13, 1922
+      </explanation>
+   </question>
+   <question number="3">
+      <questionText>
+      Which of the following statements is not true?
+      </questionText>
+      <choiceList type=single>
+         <choice correctAnswer=true>
+            Iraq is larger in area than Iran.
+         </choice>
+         <choice>
+            Indonesia has a larger population than Japan.
+         </choice>
+         <choice>
+            Poland has more people per sq. mi than Hungary. 
+         </choice>
+         <choice>
+            The state of Alaska has more land area than the country of Iran.
+         </choice>
+      </choiceList>
+      <explanation>
+         The country of Iraq covers a mere 169,235 mi. sq. compared to
+         Iran which covers 632,457 mi. sq.
+      </explanation>
+   </question>
+</quiz>

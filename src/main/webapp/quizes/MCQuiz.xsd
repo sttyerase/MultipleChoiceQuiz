@@ -1,18 +1,28 @@
 <?xml version="1.0"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <xsd:element name="quiz">
-    <xsd:complexType>
-      <xsd:sequence>
-          <xsd:element name="questionText" type="xsd:string"/>
-          <xsd:element name="choiceList">
-               <xsd:complexType>
-                 <xsd:sequence>
-                    <xsd:element name="choice" type="xsd:string"/>
-                 </xsd:sequence>
-               </xsd:complexType>
-          </xsd:element>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:element name="quiz">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="question">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="questionText" type="xsd:string" />
+							<xsd:element name="choiceList">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="choice" type="xsd:string" />
+									</xsd:sequence>
+								<xsd:attribute name="type" type="xsd:string"/>
+								<xsd:attribute name="validAnswer" type="xsd:integer"/>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="explanation" type="xsd:string" />
+						</xsd:sequence>
+						<xsd:attribute name="number" type="xsd:integer"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="name" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
 </xsd:schema>
-

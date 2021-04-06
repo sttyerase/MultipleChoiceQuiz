@@ -5,13 +5,10 @@ import java.util.*;
 /*
  * @author Daniel B. Moore <p>
  */
-public class QuestionList extends java.util.Vector
+public class QuestionList extends java.util.Vector<Question>
 {
+   private static final long serialVersionUID = 387094158321L;
    private int currentQuestionNumber = 0;
-   
-   public QuestionList(){
-      super();
-   } // CONSTRUCTOR
    
    public QuestionList(int num){
       super(num);
@@ -26,15 +23,14 @@ public class QuestionList extends java.util.Vector
    }
    
    public boolean notDone(){
-      if(this.currentQuestionNumber < this.size())return true;
-         else return false;
+      return this.currentQuestionNumber < this.size();
    }
    
    public void reInitialize(){
-      Question aQ = null;
-      Enumeration e = this.elements();
+      Question aQ;
+      Enumeration<Question> e = this.elements();
       while(e.hasMoreElements()){
-         aQ=(Question)e.nextElement();
+         aQ = e.nextElement();
          aQ.setAnswered(false);
          aQ.setAnsweredCorrectly(false);
       }

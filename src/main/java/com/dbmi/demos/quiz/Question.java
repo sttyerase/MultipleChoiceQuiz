@@ -4,19 +4,21 @@ import java.util.Vector;
 
 /*
  * @author Daniel B. Moore <p>
+ * <p>A class the models the components of a quiz question, containing the
+ * question, the possible answers and an identifier of the correct answer. </p>
  */
 public class Question
 {
    /** The text of the question */
-   private String questionText = null;
+   private String questionText;
    /** A list of possible choices. */
-   private Vector choiceList = new Vector(100);
+   private Vector<String> choiceList = new Vector<>(100);
    /** The index of the correct answer*/
    private int theAnswer = 0;
    /** The explanation of the correct answer */
    private String explanation = null;
    /** Is this question answered? */
-   private boolean answered = false;
+   private boolean answered;
    /** Was it answered correctly? */
    private boolean answeredCorrectly = false;
 
@@ -31,21 +33,21 @@ public class Question
     */
    public String getQuestionText(){
       return questionText;
-   }
+   } // GETQUESTIONTEXT()
 
-   public Vector getChoiceList(){
+   public Vector<String> getChoiceList(){
       return choiceList;
    }
 
    public String getChoiceAt(int i){
-      return (String)choiceList.elementAt(i);
+      return choiceList.elementAt(i);
    }
 
    /*
     * @return the String of the correct answer.
     */
    public String getCorrectAnswer(){
-      return (String)choiceList.elementAt(theAnswer);
+      return choiceList.elementAt(theAnswer);
    }
 
    public boolean getAnswered(){
@@ -65,15 +67,15 @@ public class Question
    }
 
    public String getChoiceElementAt(int i){
-      return (String)choiceList.elementAt(i);
+      return choiceList.elementAt(i);
    }
 
-   public void addChoiceElement(Object anObject){
-      choiceList.addElement(anObject);
+   public void addChoiceElement(String aChoice){
+      choiceList.addElement(aChoice);
    }
 
-   public void insertChoiceElementAt(Object anObject,int i){
-      choiceList.insertElementAt(anObject,i);
+   public void insertChoiceElementAt(String aChoice,int i){
+      choiceList.insertElementAt(aChoice,i);
    }
 
    public void setQuestionText(String text){
@@ -100,7 +102,7 @@ public class Question
       choiceList.trimToSize();
    }
 
-   public java.util.Enumeration choiceElements(){
+   public java.util.Enumeration<String> choiceElements(){
       return choiceList.elements();
    }
 

@@ -1,0 +1,2 @@
+!# /bin/bash
+echo "EXECUTING DEPLOYMENT SCRIPT."
